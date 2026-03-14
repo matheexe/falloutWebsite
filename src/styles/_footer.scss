@@ -1,0 +1,35 @@
+@use 'var';
+@use 'mixins';
+
+footer {
+    background: linear-gradient(180deg, rgba(10, 11, 9, 0.95), rgba(0, 0, 0, 0.95));
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 2rem 1rem 1rem;
+    color: var.$textColor;
+    margin-top: 1.5rem;
+
+    .footer-content {
+    margin: 0 auto;
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        p,
+        li {
+            @include mixins.text(0.9rem);
+            margin: 0.25rem 0;
+            color: #d8d9d5;
+        }
+    }
+
+    .footer-bottom {
+        margin: 0.8rem auto 0;
+        max-width: 1140px;
+        font-size: 0.8rem;
+        color: #9da194;
+        text-align: center;
+    }
+}

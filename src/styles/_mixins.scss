@@ -1,0 +1,7 @@
+@use "var";
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: 1.5;
+    color: var.$textColor;
+}

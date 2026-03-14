@@ -1,0 +1,91 @@
+@use "var";
+
+.hero {
+    position: relative;
+    min-height: calc(100vh - 100px);
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem 3rem;
+    text-align: center;
+    z-index: 1;
+    transition: all 0.5s ease;
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10, 11, 9, 0.65), rgba(10, 11, 9, 0.9));
+        pointer-events: none;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        width: min(900px, 92%);
+        padding: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 16px;
+        backdrop-filter: blur(2px);
+        background: rgba(0,0,0,0.22);
+    }
+
+    &__kicker {
+        color: #d8decc;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 6vw, 4rem);
+        margin-bottom: 1rem;
+        color: #e8e9e7;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    p {
+        color: #c8c8c2;
+        margin: 0 auto 1.35rem;
+        max-width: 700px;
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.65rem;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary{
+    background: var.$accentColor;
+    color: #071700;
+    transition: all 0.5s ease;
+
+    &:hover{
+        background: lighten(var.$accentColor, 10%);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 1px var.$accentColor, 0 0 5px var.$accentColor;
+        transform: scale(1.02);
+        transition: all 0.5s ease;
+    }
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.12);
+    color: #f1f1f1;
+    border: 1px solid rgba(255,255,255,0.2);
+}

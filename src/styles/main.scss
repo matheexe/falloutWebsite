@@ -1,0 +1,51 @@
+@use 'var';
+@use 'mixins';
+@use 'header';
+@use 'hero';
+@use 'cards';
+@use 'footer';
+
+@font-face{ // Default/normal font | Lato
+    font-family: Lato;
+    src: url(../../assets/fonts/Lato-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face{ // Bold font | Lato
+    font-family: Lato;
+    src: url(../../assets/fonts/Lato-Bold.ttf);
+    font-weight: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Lato, system-ui, sans-serif;
+    background: linear-gradient(180deg, #080b08 0%, #040404 45%, #010101 100%);
+    color: var.$textColor;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 100% 4px;
+    mix-blend-mode: overlay;
+    opacity: 0.4;
+    z-index: 9999;
+}

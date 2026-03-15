@@ -72,8 +72,9 @@
 
 .btn-primary{
     background: var.$accentColor;
-    color: #071700;
+    color: var.$backgroundColor;
     transition: all 0.5s ease;
+    padding: 1em;
 
     &:hover{
         background: lighten(var.$accentColor, 10%);
